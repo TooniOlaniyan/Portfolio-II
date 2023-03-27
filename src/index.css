@@ -1,0 +1,26 @@
+
+@font-face {
+  font-family:'NeueHaasDisplayBold';
+  src: url(./fonts/NeueHaasDisplayBold.ttf) format(truetype);
+  font-weight: normal;
+}
+
+
+a {
+  text-decoration: none;
+}
+body{
+  font-family: 'NeueHaasDisplayBold';
+}
+
+::-webkit-scrollbar-thumb {
+  width: 7px;
+  background-color: #f05454;
+  border-radius: 10px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+::-webkit-scrollbar:hover {
+  transform: scaleX(1);
+}
