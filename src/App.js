@@ -26,7 +26,7 @@ function App() {
 
   return (
     <Router>
-      {/* <LocomotiveScrollProvidernpm 
+      <LocomotiveScrollProvider 
         options={{
           smooth: true,
           tablet: {
@@ -36,7 +36,7 @@ function App() {
         watch={[() => ScrollTrigger.update()]}
         containerRef={containerRef}
         
-      > */}
+      >
       <main data-scroll-container ref={containerRef}>
         <ToastContainer />
         <GlobalStyles />
@@ -51,7 +51,7 @@ function App() {
           </ThemeProvider>
         </ThemeContext.Provider>
       </main>
-      {/* </LocomotiveScrollProvider> */}
+      </LocomotiveScrollProvider>
     </Router>
   )
 }

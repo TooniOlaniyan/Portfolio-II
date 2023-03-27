@@ -92,16 +92,19 @@ const TextWrapper = styled(motion.div)`
   text-align: justify;
   /* background-color: red; */
   @media screen and (max-width: 640px) {
-    font-size: 1rem;
+    margin-top: 4rem;
+    font-size: 1.5rem;
     width: 100vw;
     padding: 0 1rem;
+    flex-direction: column;
+    gap: 0;
   }
 
   #target {
     font-kerning: none;
     position: relative;
     @media screen and (max-width: 640px) {
-      width: max-content;
+      width: 100vw;
       /* background-color: red; */
       font-kerning: none;
       padding: 0.5rem;
@@ -145,7 +148,8 @@ const TextWrapper = styled(motion.div)`
     font-size: 1.2rem;
     color: #fff;
     @media screen and (max-width: 640px) {
-      display: none;
+      /* display: none; */
+      font-size: 1.1rem;
     }
   }
 `

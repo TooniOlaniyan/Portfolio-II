@@ -18,7 +18,7 @@ function ContactMe() {
       animate={{ width: '-100vw' }}
       transition={{ duration: 0.5 }}
     >
-      <Transition timeline={contact} />
+      {/* <Transition timeline={contact} /> */}
       <CustomCursor />
       <Main>
         <motion.div className='header'>
@@ -108,6 +108,7 @@ const Main = styled.div`
   height: 100vh;
   @media screen and (max-width: 640px) {
     padding: 1rem;
+    overflow: hidden;
   }
 
   .header {
@@ -166,13 +167,14 @@ const Form = styled(motion.form)`
     gap: 2rem;
 
     input {
-      border: none;
+      border: 1px solid ${({ theme }) => theme.colors.body};
       background-color: ${({ theme }) => theme.colors.body};
       border-bottom: 2px solid ${({ theme }) => theme.colors.textColor};
       padding: 0.5rem 0.2rem;
       font-size: 1.7rem;
       color: ${({ theme }) => theme.colors.white};
       outline: none;
+
       @media screen and (max-width: 640px) {
         font-size: 1.2rem;
       }
@@ -183,7 +185,7 @@ const Form = styled(motion.form)`
     }
     textarea {
       background-color: ${({ theme }) => theme.colors.body};
-      border: none;
+      border:1px solid ${({ theme }) => theme.colors.body};
       resize: none;
       border-bottom: 2px solid ${({ theme }) => theme.colors.textColor};
       color: ${({ theme }) => theme.colors.white};

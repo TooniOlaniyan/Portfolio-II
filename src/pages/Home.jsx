@@ -29,7 +29,7 @@ function Home() {
   return (
     <>
       <CustomCursor />
-      <Transition timeline={home} />
+      {/* <Transition timeline={home} /> */}
       <Main>
         <Header />
         <Hero />
@@ -51,7 +51,8 @@ const Main = styled.div`
   overflow: hidden;
   background-color: ${({ theme }) => theme.colors.body};
   @media screen and (max-width: 640px) {
-    gap: 0;
+    gap: 4rem;
+    overflow: hidden;
   }
 `
 export default Home

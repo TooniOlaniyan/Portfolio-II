@@ -214,6 +214,7 @@ const TextPart = styled(motion.div)`
       @media screen and (max-width: 640px) {
         justify-self: flex-end;
         width: 100%;
+        margin-top: 2rem;
       }
     }
   }
@@ -253,6 +254,7 @@ const TextPart = styled(motion.div)`
       font-size: 7rem;
       overflow: visible;
       letter-spacing: normal;
+      margin-top: 1rem;
     }
     span {
       transition: all 1s linear;

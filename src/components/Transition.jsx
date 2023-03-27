@@ -19,13 +19,17 @@ function Transition({timeline}) {
   )
 }
 const Main = styled.div`
-    .transition{
-        z-index: 1000000;
-        background-color: ${({theme}) => theme.colors.textColor};
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 100vh;
+  .transition {
+    z-index: 1000000;
+    background-color: ${({ theme }) => theme.colors.textColor};
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    @media screen and (max-width: 640px) {
+     width: 100vw;
+     overflow: hidden;
     }
+  }
 `
 export default Transition
