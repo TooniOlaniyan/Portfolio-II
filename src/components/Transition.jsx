@@ -20,14 +20,15 @@ function Transition({timeline}) {
 }
 const Main = styled.div`
   .transition {
-    z-index: 1000000;
+    z-index: 1;
     background-color: ${({ theme }) => theme.colors.textColor};
     position: absolute;
     top: 0;
     width: 100%;
+    /* max-width: 100vw; */
     height: 100vh;
     @media screen and (max-width: 640px) {
-     width: 100vw;
+      display: none;
      overflow: hidden;
     }
   }

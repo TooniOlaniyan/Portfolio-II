@@ -1,84 +1,46 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { motion } from 'framer-motion'
 import styled from 'styled-components'
-import gsap from 'gsap'
+import gsap , {Power4 , Power1} from 'gsap'
+import '../index.css'
 
 function Loader() {
-  const [figure, setFigure] = useState(1)
-  const [line, setLine] = useState('')
-  const barRef = useRef(null)
-  const loading = () => {
-    const tl = gsap.timeline({
-      paused: 'true',
-    })
-    tl.to('.bar', {
-      width: '100%',
-      duration: 5,
-    })
-    let width = 1
-    console.log(width)
-    if (width <= 100) {
-      tl.play()
-    }else{
-      width++
-      setFigure(width)
-      
-    }
-  }
-
   useEffect(() => {
-    loading()
-  }, [])
+    const tl = gsap.timeline()
+    tl.fromTo('.bar' , {
+      width:'0'
+    } , {
+      width:'100%',
+      ease:Power4.easeInOut,
+      duration:3,
+      // opacity:0.5
+      
+      
+      
+    } )
+    tl.to('.text' , {
+      y:-120,
+      duration:3,
+      skewY:10,
+      ease:Power1.easeInOut
+      
+    })
+
+  
+
+  })
 
   return (
-    <Container>
+    <>
       <div className='loader'>
-        <p className='loadText'>Loading</p>
-        <div ref={barRef} className='bar'></div>
-        <p className='percentage'>{figure} %</p>
+        <div className='loadText'>
+          <p className='text'>Loading...</p>
+        </div>
+        <div className='bar'></div>
       </div>
-    </Container>
+    </>
   )
 }
 
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  gap: 1rem;
-  background-color: ${({ theme }) => theme.colors.body};
-  overflow: hidden;
-  .loader {
-    @media screen and (max-width: 640px) {
-      overflow: hidden;
-    }
-    .percentage {
-      font-size: 1rem;
-      color: ${({ theme }) => theme.colors.white};
-      /* letter-spacing: 0.5rem; */
-    }
-    width: 50vw;
-    gap: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    .loadText {
-      font-size: 1.2rem;
-      color: ${({ theme }) => theme.colors.white};
-      letter-spacing: 0.5rem;
-    }
-  }
-  .bar {
-    width: 1%;
-    border-radius: 0.2rem;
-    height: 0.3rem;
-    background-color: ${({ theme }) => theme.colors.white};
-    align-self: flex-start;
-  }
-`
+
 
 export default Loader

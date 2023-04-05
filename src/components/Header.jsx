@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
-import TimeComponent from './TimeComponent'
 import { useLocomotiveScroll } from 'react-locomotive-scroll'
 
 function Header() {
@@ -61,26 +60,13 @@ function Header() {
         </motion.p>
       </div>
       <div className='nav-container'>
-        <motion.ul >
-          <motion.li
-            onClick={() => handleScroll('#about')}
-          >
-            About
-          </motion.li>
-          <motion.li
-            onClick={() => handleScroll('#skills')}
-          >
-            Skills
-          </motion.li>
-          <motion.li
-            onClick={() => handleScroll('#project')}
-          >
+        <motion.ul>
+          <motion.li onClick={() => handleScroll('#about')}>About</motion.li>
+          <motion.li onClick={() => handleScroll('#skills')}>Skills</motion.li>
+          <motion.li onClick={() => handleScroll('#project')}>
             Projects
           </motion.li>
-          <motion.div
-            onClick={handleClick}
-            className='contact'
-          >
+          <motion.div onClick={handleClick} className='contact'>
             Contact Me
           </motion.div>
         </motion.ul>
@@ -91,7 +77,10 @@ function Header() {
         animate='animate'
         className='hamburger'
       >
-        <TimeComponent />
+        {/* <TimeComponent /> */}
+        <div onClick={handleClick} className='contactMobile'>
+          Contact Me
+        </div>
       </motion.div>
     </Main>
   )
@@ -106,6 +95,24 @@ const Main = styled.header`
   max-height: 3rem;
   font-size: 18px;
   width: 100vw;
+  .contactMobile {
+    display: none;
+    @media screen and (max-width: 640px) {
+      border: 2px solid ${({ theme }) => theme.colors.textColor};
+      padding: 0.7rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.8rem;
+      color: ${({ theme }) => theme.colors.textColor};
+      width: max-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s ease;
+      /* display: block; */
+    }
+  }
   .headerName {
     color: ${({ theme }) => theme.colors.textColor};
     @media screen and (max-width: 640px) {
@@ -147,9 +154,10 @@ const Main = styled.header`
       position: relative;
       overflow: hidden;
       transition: all 0.5s ease;
-      &:hover{
+      &:hover {
         color: #000;
       }
+
       &::before {
         content: '';
         position: absolute;

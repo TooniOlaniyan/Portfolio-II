@@ -1,15 +1,13 @@
-
 @font-face {
-  font-family:'NeueHaasDisplayBold';
+  font-family: 'NeueHaasDisplayBold';
   src: url(./fonts/NeueHaasDisplayBold.ttf) format(truetype);
   font-weight: normal;
 }
 
-
 a {
   text-decoration: none;
 }
-body{
+body {
   font-family: 'NeueHaasDisplayBold';
 }
 
@@ -23,4 +21,61 @@ body{
 
 ::-webkit-scrollbar:hover {
   transform: scaleX(1);
+}
+
+.preloaderContainer {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 200;
+  background-color: #000;
+ 
+}
+@media screen and (max-width: 640px) {
+  .preloaderContainer{
+    height: 80vh;
+  }
+}
+
+.loader {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* z-index: 101; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 30rem;
+  gap: 3rem;
+}
+@media screen and (max-width: 640px) {
+  .loader{
+  padding: 0 1rem;
+
+  }
+}
+.loadText {
+  font-size: 1.2rem;
+  color: #f2e5d7;
+  letter-spacing: 0.5rem;
+  overflow: hidden;
+  height: fit-content;
+}
+@media screen and (max-width: 640px) {
+  .loadText{
+    font-size: 1rem;
+  }
+}
+
+.bar {
+  width: 0%;
+  border-radius: 0.2rem;
+  height: 0.3rem;
+  background-color: #f2e5d7;
+  align-self: flex-start;
 }

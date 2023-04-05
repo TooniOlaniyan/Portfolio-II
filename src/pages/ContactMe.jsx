@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useState} from 'react'
 import styled from 'styled-components'
 import {motion} from 'framer-motion'
 import { RiSendPlaneLine } from 'react-icons/ri'
@@ -10,7 +10,34 @@ import gsap from 'gsap'
 
 function ContactMe() {
   const navigate = useNavigate()
+  const [formData , setFormData] = useState({
+    name:'',
+    email:'',
+    description:''
+  })
+
+  const {name , email , description } = formData
   const contact = gsap.timeline()
+  const tl = gsap.timeline()
+  const handleClick = () => {
+    navigate('/')
+    tl.reverse()
+    
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+  }
+
+  const handleChange = (e) => {
+    setFormData((prevstate) => ({
+      ...prevstate , 
+      [e.target.id] : e.target.value
+
+    }))
+
+  }
 
   return (
     <motion.div
@@ -18,7 +45,8 @@ function ContactMe() {
       animate={{ width: '-100vw' }}
       transition={{ duration: 0.5 }}
     >
-      {/* <Transition timeline={contact} /> */}
+      <Transition timeline={contact} />
+
       <CustomCursor />
       <Main>
         <motion.div className='header'>
@@ -30,10 +58,10 @@ function ContactMe() {
             Get in touch with me
           </motion.p>
           <motion.div
-            onClick={() => navigate('/')}
+            onClick={handleClick}
             initial={{ opacity: 0, y: '-20' }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{  duration:1 ,  ease: 'easeIn' }}
+            transition={{ duration: 1, ease: 'easeIn' }}
             className='back'
           >
             <p>Go back</p>
@@ -54,7 +82,13 @@ function ContactMe() {
             className='formArea'
           >
             <label htmlFor=''>Name</label>
-            <input type='text' placeholder='Your name' />
+            <input
+              onChange={handleChange}
+              type='text'
+              id='name'
+              value={name}
+              placeholder='Your name'
+            />
           </motion.div>
           <motion.div
             initial={{ opacity: 0.5, x: -150 }}
@@ -63,7 +97,13 @@ function ContactMe() {
             className='formArea'
           >
             <label htmlFor=''>E-mail</label>
-            <input type='email' placeholder='Your Email' />
+            <input
+              onChange={handleChange}
+              type='email'
+              placeholder='Your Email'
+              id='email'
+              value={email}
+            />
           </motion.div>
 
           <motion.div
@@ -75,17 +115,25 @@ function ContactMe() {
             <label htmlFor=''>Message</label>
             <textarea
               name=''
-              id=''
+              id='description'
               cols='30'
               rows='6'
               placeholder='Write your message'
+              onChange={handleChange}
+              value={description}
+
             ></textarea>
           </motion.div>
           <motion.div className='btn'>
             <motion.button
+              onClick={handleSubmit}
               initial={{ opacity: 0.5, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay:1 , duration: 1  , easings:['circIn' , 'circOut'] }}
+              transition={{
+                delay: 1,
+                duration: 1,
+                easings: ['circIn', 'circOut'],
+              }}
               data-content='Send it in'
             >
               Send it in
@@ -122,6 +170,7 @@ const Main = styled.div`
     }
     .backBtn {
       fill: #fff;
+    
     }
     .back {
       display: flex;
@@ -141,6 +190,7 @@ const Main = styled.div`
       font-size: 1.3rem;
       position: relative;
       overflow: hidden;
+      
       @media screen and (max-width: 640px) {
         font-size: 1rem;
       }

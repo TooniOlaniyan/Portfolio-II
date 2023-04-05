@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
-import { motion, useScroll } from 'framer-motion'
-
+import { motion } from 'framer-motion'
 
 //Ease
 const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] }
@@ -10,72 +9,45 @@ function Hero() {
   return (
     <Section data-scroll-section>
       <TextPart>
-        <div
-          data-scroll
-          data-scroll-speed='-1'
-          data-scroll-direction='vertical'
-          className='topFront'
-        >
+        <div className='topFront'>
           <motion.span
-          initial={{ y: -10, opacity: 0.7 , skewY:1 }}
-          whileInView={{ y: 0, opacity: 1 , skewY:0 }}
-          transition={{ ease: 'easeIn', duration: 0.5 }}
-          viewport={{ once: true }}
+          // initial={{ y: -10, opacity: 0.7 , skewY:1 }}
+          // whileInView={{ y: 0, opacity: 1 , skewY:0 }}
+          // transition={{ ease: 'easeIn', duration: 0.5 }}
+          // viewport={{ once: true }}
           >
             Front
           </motion.span>
           <div className='dash'>
             <motion.span
-              initial={{ y: 30, opacity: 0.7 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ ease: 'easeIn', duration: 0.8 }}
-              viewport={{ once: true }}
+              // initial={{ y: 30, opacity: 0.7 }}
+              // whileInView={{ y: 0, opacity: 1 }}
+              // transition={{ ease: 'easeIn', duration: 0.8 }}
+              // viewport={{ once: true }}
               className='dash-line'
             ></motion.span>
           </div>
           <motion.span
-            initial={{ y: 10, opacity: 0.7 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ ease: 'easeIn', duration: 1  }}
-            viewport={{ once: true }}
+          // initial={{ y: 10, opacity: 0.7 }}
+          // whileInView={{ y: 0, opacity: 1 }}
+          // transition={{ ease: 'easeIn', duration: 1  }}
+          // viewport={{ once: true }}
           >
             End
           </motion.span>
         </div>
 
-        <motion.div className='text'>
-          <div
-            initial={{ y: 50, opacity: 0.7 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ ease: 'easeIn', duration: 0.5 }}
-            viewport={{ once: true }}
-            data-scroll
-            data-scroll-speed='2'
-            data-scroll-direction='horizontal'
-            className='developer'
-          >
+          <div className='developer'>
             <span>D</span>
             <span>E</span>
             <span>V</span>
             <span>E</span>
             <span>L</span>
-          </div>
-          <div
-            initial={{ y: 50, opacity: 0.7 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ ease: 'easeIn', duration: 0.5 }}
-            viewport={{ once: true }}
-            data-scroll
-            data-scroll-speed='-2'
-            data-scroll-direction='horizontal'
-            className='developer'
-          >
             <span>O</span>
             <span>P</span>
             <span>E</span>
             <span>R</span>
           </div>
-        </motion.div>
         <motion.div
           data-scroll
           data-scroll-speed='-1'
@@ -226,7 +198,6 @@ const TextPart = styled(motion.div)`
     align-items: center;
     font-size: 1rem;
     position: relative;
-    /* background-color: red; */
     overflow: hidden;
     @media screen and (max-width: 640px) {
       padding: 0;
@@ -248,18 +219,24 @@ const TextPart = styled(motion.div)`
     font-size: 18rem;
     margin-top: 2rem;
     letter-spacing: -2rem;
-    overflow: hidden;
-    width: 100%;
+    /* overflow: hidden; */
+
     @media screen and (max-width: 640px) {
-      font-size: 7rem;
+      font-size: 6rem;
       overflow: visible;
       letter-spacing: normal;
       margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap:0.5rem;
     }
     span {
       transition: all 1s linear;
       position: relative;
       overflow: hidden;
+      @media screen and (max-width: 640px) {
+        
+      }
       &:hover {
         color: #f2e5d7;
       }
@@ -269,7 +246,6 @@ const TextPart = styled(motion.div)`
     font-size: 1.5rem;
     font-weight: 100;
     overflow: hidden;
-    /* background-color: red; */
     @media screen and (max-width: 640px) {
       font-size: 1.2rem;
     }

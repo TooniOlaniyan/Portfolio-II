@@ -1,4 +1,4 @@
-import React, { useRef, useEffect , useState } from 'react'
+import React from 'react'
 import About from '../components/About'
 import CustomCursor from '../components/CustomCursor'
 import Footer from '../components/Footer'
@@ -12,24 +12,12 @@ import gsap from 'gsap'
 import Loader from '../components/Loader'
 
 function Home() {
-  // const [loading , setLoading] = useState(true)
   const home = gsap.timeline()
-
-
-  // useEffect(() => {
-  //   setLoading(true);
-
-  //   setTimeout(() => {
-  //     setLoading(false);
-  //   }, 4000);
-  // }, []);
-
-  // if (loading) return <Loader />
 
   return (
     <>
       <CustomCursor />
-      {/* <Transition timeline={home} /> */}
+      <Transition timeline={home} />
       <Main>
         <Header />
         <Hero />
@@ -52,7 +40,7 @@ const Main = styled.div`
   background-color: ${({ theme }) => theme.colors.body};
   @media screen and (max-width: 640px) {
     gap: 4rem;
-    overflow: hidden;
+    overflow-x: hidden;
   }
 `
 export default Home
