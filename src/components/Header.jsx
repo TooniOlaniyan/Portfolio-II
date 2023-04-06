@@ -7,18 +7,7 @@ import { useLocomotiveScroll } from 'react-locomotive-scroll'
 function Header() {
   const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] }
   const navigate = useNavigate()
-  const menu = {
-    initial: {
-      y: 0,
-    },
-    animate: {
-      y: 0,
-      transition: {
-        delayChildren: 0.6,
-        staggerChildren: 0.4,
-      },
-    },
-  }
+
 
   const letter = {
     initial: {
@@ -77,7 +66,6 @@ function Header() {
         animate='animate'
         className='hamburger'
       >
-        {/* <TimeComponent /> */}
         <div onClick={handleClick} className='contactMobile'>
           Contact Me
         </div>

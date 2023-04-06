@@ -9,7 +9,6 @@ import Skills from '../components/Skills'
 import styled from 'styled-components'
 import Transition from '../components/Transition'
 import gsap from 'gsap'
-import Loader from '../components/Loader'
 
 function Home() {
   const home = gsap.timeline()

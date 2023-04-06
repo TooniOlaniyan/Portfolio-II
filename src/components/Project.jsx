@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import project1 from '../assets/project1.png'
 import project2 from '../assets/project2.png'
@@ -6,15 +6,10 @@ import project3 from '../assets/project3.png'
 import project4 from '../assets/project4.png'
 import project6 from '../assets/project6.png'
 import {BsGithub} from 'react-icons/bs'
-import { GiCursedStar } from 'react-icons/gi'
-import {IoArrowRedoOutline} from 'react-icons/io5'
 import { ImArrowUpRight2 } from 'react-icons/im'
 import {motion} from 'framer-motion'
-import NameOnHover from '../shared/NameOnHover'
 
 function Project() {
-  const [display , setDisplay] = useState(false)
-  const transition = { duration: 0.5, ease: [0.6, 0.01, -0.05, 0.9] }
    const parent = {
      initial: {
        y: 0,
@@ -26,17 +21,6 @@ function Project() {
        },
      },
    }
-     const letter = {
-       initial: {
-         y: 10,
-         opacity: 0
-       },
-       animate: {
-         y: 0,
-         opacity: 1,
-         transition: { duration: 0.5, ...transition },
-       },
-     }
   return (
       <Main id='project' data-scroll-section>
         <RecentWorks>

@@ -1,7 +1,7 @@
 import React , {useState} from 'react'
 import styled from 'styled-components'
 import {motion} from 'framer-motion'
-import { RiSendPlaneLine } from 'react-icons/ri'
+
 import { BsArrowLeft } from 'react-icons/bs'
 import CustomCursor from '../components/CustomCursor'
 import {useNavigate} from 'react-router-dom'

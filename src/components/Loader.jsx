@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
-import styled from 'styled-components'
+import React, { useEffect} from 'react'
 import gsap , {Power4 , Power1} from 'gsap'
 import '../index.css'
 

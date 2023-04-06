@@ -1,6 +1,5 @@
-import React  , {useState}from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { useLocomotiveScroll } from 'react-locomotive-scroll'
 import TimeComponent from '../components/TimeComponent'
 import {BsArrowUpShort} from 'react-icons/bs'
 import {motion} from 'framer-motion'
