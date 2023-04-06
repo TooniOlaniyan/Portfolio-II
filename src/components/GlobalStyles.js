@@ -13,6 +13,7 @@ body {
     &,
     *{
         cursor: none;
+        scroll-behaviour: smooth;
     }
 }
 body{

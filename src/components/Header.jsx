@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import { useLocomotiveScroll } from 'react-locomotive-scroll'
+import { Link, animateScroll as scroll } from 'react-scroll'
 
 function Header() {
   const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] }
@@ -34,7 +35,7 @@ function Header() {
   }
 
   return (
-    <Main data-scroll-section>
+    <Main id='header' data-scroll-section>
       <div>
         <motion.p
           initial={{ y: -50, opacity: 0 }}
@@ -50,11 +51,33 @@ function Header() {
       </div>
       <div className='nav-container'>
         <motion.ul>
-          <motion.li onClick={() => handleScroll('#about')}>About</motion.li>
-          <motion.li onClick={() => handleScroll('#skills')}>Skills</motion.li>
-          <motion.li onClick={() => handleScroll('#project')}>
-            Projects
-          </motion.li>
+          <Link
+            to='about'
+            spy={true}
+            smooth='easeInOutQuint'
+            offset={-70}
+            duration={1200}
+          >
+            <motion.li>About</motion.li>
+          </Link>
+          <Link
+            to='skills'
+            spy={true}
+            smooth='easeInOutQuint'
+            offset={-70}
+            duration={1500}
+          >
+            <motion.li>Skills</motion.li>
+          </Link>
+          <Link
+            to='project'
+            spy={true}
+            smooth='easeInOutQuint'
+            offset={-70}
+            duration={2000}
+          >
+            <motion.li>Projects</motion.li>
+          </Link>
           <motion.div onClick={handleClick} className='contact'>
             Contact Me
           </motion.div>

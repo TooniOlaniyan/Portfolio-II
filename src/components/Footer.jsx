@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import TimeComponent from '../components/TimeComponent'
 import {BsArrowUpShort} from 'react-icons/bs'
 import {motion} from 'framer-motion'
+import { Link, animateScroll as scroll } from 'react-scroll'
 import '../App.css'
 
 function Footer() {
@@ -32,10 +33,17 @@ function Footer() {
           <TimeComponent />
           <p>Designed By : 🙋‍♂️</p>
           <div className='time'>
-          <BsArrowUpShort size={40} className='icon'/>
-            <p>Go back up</p>
+            <BsArrowUpShort size={40} className='icon' />
+            <Link
+              to='header'
+              spy={true}
+              smooth='easeInOutQuint'
+              offset={-70}
+              duration={2200}
+            >
+              <p>Go back up</p>
+            </Link>
           </div>
-
         </motion.div>
       </Section>
     </div>
