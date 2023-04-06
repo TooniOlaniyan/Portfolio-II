@@ -32,8 +32,6 @@ function Footer() {
         <motion.div className='date'>
           <TimeComponent />
           <p>Designed By : 🙋‍♂️</p>
-          <div className='time'>
-            <BsArrowUpShort size={40} className='icon' />
             <Link
               to='header'
               spy={true}
@@ -41,9 +39,11 @@ function Footer() {
               offset={-70}
               duration={2200}
             >
+          <div className='time'>
+            <BsArrowUpShort size={40} className='icon' />
               <p>Go back up</p>
-            </Link>
           </div>
+            </Link>
         </motion.div>
       </Section>
     </div>
