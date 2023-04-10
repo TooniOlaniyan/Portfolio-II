@@ -2,8 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
-import { useLocomotiveScroll } from 'react-locomotive-scroll'
-import { Link, animateScroll as scroll } from 'react-scroll'
+import { Link } from 'react-scroll'
 
 function Header() {
   const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] }
@@ -20,15 +19,6 @@ function Header() {
     },
   }
 
-  const { scroll } = useLocomotiveScroll()
-  const handleScroll = (id) => {
-    let elem = document.querySelector(id)
-    scroll.scrollTo(elem, {
-      offset: '-200',
-      duration: '1000',
-      easing: [0.25, 0.0, 0.35, 1.0],
-    })
-  }
 
   const handleClick = () => {
     navigate('/contact')
@@ -36,12 +26,12 @@ function Header() {
 
   return (
     <Main id='header' data-scroll-section>
-      <div>
+      <div className='headerContainer'>
         <motion.p
-          initial={{ y: -50, opacity: 0 }}
+          initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{
-            duration: 1.4,
+            duration: 1,
             ease: [0.6, 0.01, -0.05, 0.9],
           }}
           className='headerName'
@@ -55,7 +45,7 @@ function Header() {
             to='about'
             spy={true}
             smooth='easeInOutQuint'
-            offset={-70}
+            offset={-300}
             duration={1200}
           >
             <motion.li>About</motion.li>
@@ -106,6 +96,9 @@ const Main = styled.header`
   max-height: 3rem;
   font-size: 18px;
   width: 100vw;
+  .headerContainer{
+    overflow:hidden;
+  }
   .contactMobile {
     display: none;
     @media screen and (max-width: 640px) {

@@ -1,43 +1,50 @@
-import React , {useState} from 'react'
+import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
-import {motion} from 'framer-motion'
-
+import { motion } from 'framer-motion'
+import { toast } from 'react-toastify'
+import emailjs from '@emailjs/browser'
+import { ClipLoader } from 'react-spinners'
 import { BsArrowLeft } from 'react-icons/bs'
 import CustomCursor from '../components/CustomCursor'
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Transition from '../components/Transition'
 import gsap from 'gsap'
 
 function ContactMe() {
   const navigate = useNavigate()
-  const [formData , setFormData] = useState({
-    name:'',
-    email:'',
-    description:''
-  })
+  const formRef = useRef(null)
+  const [loading, setIsLoading] = useState(false)
 
-  const {name , email , description } = formData
   const contact = gsap.timeline()
   const tl = gsap.timeline()
   const handleClick = () => {
     navigate('/')
     tl.reverse()
-    
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-
+    setIsLoading(true)
+    try {
+      const response = await emailjs.sendForm(
+        'service_2mr8qyg',
+        'template_y0n40b8',
+        formRef.current,
+        '1g5UIVelOQB93GewR'
+      )
+      if (response.text === 'OK') {
+        toast.success('Message sent')
+        setIsLoading(false)
+        formRef.current.reset()
+      }
+    } catch (error) {
+      toast.error('Something went wrong, try again')
+      setIsLoading(false)
+      formRef.current.reset()
+    }
   }
 
-  const handleChange = (e) => {
-    setFormData((prevstate) => ({
-      ...prevstate , 
-      [e.target.id] : e.target.value
 
-    }))
-
-  }
 
   return (
     <motion.div
@@ -74,6 +81,7 @@ function ContactMe() {
             ease: 'easeIn',
             delayChildren: 0.5,
           }}
+          ref={formRef}
         >
           <motion.div
             initial={{ opacity: 0.5, x: -100 }}
@@ -83,10 +91,9 @@ function ContactMe() {
           >
             <label htmlFor=''>Name</label>
             <input
-              onChange={handleChange}
+              required
               type='text'
-              id='name'
-              value={name}
+              name='from_name'
               placeholder='Your name'
             />
           </motion.div>
@@ -98,11 +105,10 @@ function ContactMe() {
           >
             <label htmlFor=''>E-mail</label>
             <input
-              onChange={handleChange}
+              required
               type='email'
               placeholder='Your Email'
-              id='email'
-              value={email}
+              name='user_email'
             />
           </motion.div>
 
@@ -111,17 +117,15 @@ function ContactMe() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.6 }}
             className='formArea'
+            aria-required
           >
             <label htmlFor=''>Message</label>
             <textarea
-              name=''
-              id='description'
+              required
+              name='message'
               cols='30'
               rows='6'
               placeholder='Write your message'
-              onChange={handleChange}
-              value={description}
-
             ></textarea>
           </motion.div>
           <motion.div className='btn'>
@@ -138,6 +142,7 @@ function ContactMe() {
             >
               Send it in
             </motion.button>
+            {loading ? <ClipLoader color='#fff' /> : ''}
           </motion.div>
         </Form>
       </Main>
@@ -170,7 +175,6 @@ const Main = styled.div`
     }
     .backBtn {
       fill: #fff;
-    
     }
     .back {
       display: flex;
@@ -190,7 +194,7 @@ const Main = styled.div`
       font-size: 1.3rem;
       position: relative;
       overflow: hidden;
-      
+
       @media screen and (max-width: 640px) {
         font-size: 1rem;
       }
@@ -235,7 +239,7 @@ const Form = styled(motion.form)`
     }
     textarea {
       background-color: ${({ theme }) => theme.colors.body};
-      border:1px solid ${({ theme }) => theme.colors.body};
+      border: 1px solid ${({ theme }) => theme.colors.body};
       resize: none;
       border-bottom: 2px solid ${({ theme }) => theme.colors.textColor};
       color: ${({ theme }) => theme.colors.white};

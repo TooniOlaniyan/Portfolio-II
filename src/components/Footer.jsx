@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import TimeComponent from '../components/TimeComponent'
 import {BsArrowUpShort} from 'react-icons/bs'
 import {motion} from 'framer-motion'
-import { Link, animateScroll as scroll } from 'react-scroll'
+import { Link} from 'react-scroll'
 import '../App.css'
 
 function Footer() {
