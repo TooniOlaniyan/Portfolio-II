@@ -97,7 +97,7 @@ const Main = styled.header`
   font-size: 18px;
   width: 100vw;
   .headerContainer{
-    overflow:hidden;
+    /* overflow:hidden; */
   }
   .contactMobile {
     display: none;

@@ -169,6 +169,7 @@ const Main = styled.div`
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
+    
     @media screen and (max-width: 640px) {
       /* background-color: red; */
       /* justify-content: space-around; */
@@ -207,7 +208,7 @@ const Form = styled(motion.form)`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  overflow: hidden;
+  /* overflow: hidden; */
   label {
     color: ${({ theme }) => theme.colors.textColor};
     font-size: 1.1rem;
