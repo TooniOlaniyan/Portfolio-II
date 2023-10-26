@@ -152,13 +152,13 @@ function ContactMe() {
 
 const Main = styled.div`
   display: flex;
-  /* border: 1px solid white; */
   gap: 2rem;
   flex-direction: column;
-  padding: 6rem;
+  padding: 3rem;
   background-color: ${({ theme }) => theme.colors.body};
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   @media screen and (max-width: 640px) {
     padding: 1rem;
     overflow: hidden;
@@ -169,10 +169,11 @@ const Main = styled.div`
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
+    width: 100%;
     
     @media screen and (max-width: 640px) {
       /* background-color: red; */
-      /* justify-content: space-around; */
+      justify-content: space-around;
     }
     .backBtn {
       fill: #fff;

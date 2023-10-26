@@ -165,7 +165,7 @@ function Project() {
                 whileHover={{ scale: 1.2 }}
                 transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
                 target='_blank'
-                href='https://github.com/TooniOlaniyan/form-validation'
+                href='https://github.com/TooniOlaniyan/WAGMI'
               >
                 <BsGithub size={30} />
               </motion.a>
@@ -173,7 +173,7 @@ function Project() {
                 whileHover={{ scale: 1.2 }}
                 transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
                 target='_blank'
-                href='https://form-validation-mu-six.vercel.app/'
+                href='https://wagmi-xi.vercel.app/'
               >
                 <ImArrowUpRight2 size={30} />
               </motion.a>
@@ -188,9 +188,9 @@ function Project() {
             whileInView='animate'
             viewport={{ once: true }}
           >
-            <motion.h2>Email Form Validaton</motion.h2>
+            <motion.h2>WAGMI APP</motion.h2>
             <motion.p>
-              A form validatin app using <br /> React and Firebase
+              A fullstack app for investing <br /> React and Firebase
             </motion.p>
           </Text>
         </Works>

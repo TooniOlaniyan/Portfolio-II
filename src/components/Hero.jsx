@@ -230,6 +230,7 @@ const TextPart = styled(motion.div)`
       flex-wrap: wrap;
       gap:0.5rem;
     }
+
     span {
       transition: all 1s linear;
       position: relative;
