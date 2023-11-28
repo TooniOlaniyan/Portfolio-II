@@ -9,6 +9,7 @@ a {
 }
 body {
   font-family: 'NeueHaasDisplayBold';
+  position: relative;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -79,4 +80,23 @@ body {
   height: 0.3rem;
   background-color: #f2e5d7;
   align-self: flex-start;
+}
+
+
+
+
+
+
+
+.overlay{
+  background-image: url('/src/assets/pattern4.jpg');
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  object-fit: contain;
+  opacity: 0.2;
+  top: 0;
+  left:0;
+  
+
 }

@@ -42,6 +42,7 @@ function App() {
       > */}
       <Router>
         <SmoothScroll />
+        <div className='overlay'/>
         <main data-scroll-container ref={containerRef}>
           <div className='preloaderContainer' ref={preloader}>
             <Loader />

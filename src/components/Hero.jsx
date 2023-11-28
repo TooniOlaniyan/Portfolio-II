@@ -153,7 +153,7 @@ const Section = styled.section`
 
 const TextPart = styled(motion.div)`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 0.5rem;
@@ -216,7 +216,7 @@ const TextPart = styled(motion.div)`
     }
   }
   .developer {
-    font-size: 18rem;
+    font-size: 14rem;
     margin-top: 2rem;
     letter-spacing: -2rem;
     /* overflow: hidden; */
