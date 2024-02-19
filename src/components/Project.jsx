@@ -441,6 +441,7 @@ const Link = styled.div`
     padding: 0.6rem;
     border: 2px solid ${({ theme }) => theme.colors.white};
     border-radius: 20px;
+    z-index:999;
     @media screen and (max-width: 640px) {
       width: 85vw;
     }
