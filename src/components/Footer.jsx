@@ -88,6 +88,7 @@ const Section = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
+      z-index:40;
     
       p{
         font-size: 0.6rem;

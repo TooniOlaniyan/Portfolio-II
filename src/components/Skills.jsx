@@ -30,7 +30,7 @@ function Skills() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: 'easeInOut' }}
         >
-          <p> React ⏤ I use it to create Web app with Reusable components</p>
+          <p> ReactJS ⏤ I use it to create Web app with Reusable components</p>
           <span className='skillLine'></span>
         </motion.div>
         <motion.div
@@ -39,7 +39,7 @@ function Skills() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: 'easeInOut' }}
         >
-          <p>HTML5 ⏤ I mainly use to layout markup structure</p>
+          <p>NextJs ⏤ Build high performance app with serverside rendering</p>
           <span className='skillLine'></span>
         </motion.div>
         <motion.div

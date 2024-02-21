@@ -5,6 +5,7 @@ import project2 from '../assets/project2.png'
 import project3 from '../assets/project3.png'
 import project4 from '../assets/project4.png'
 import project6 from '../assets/project6.png'
+import project7 from '../assets/project7.png'
 import {BsGithub} from 'react-icons/bs'
 import { ImArrowUpRight2 } from 'react-icons/im'
 import {motion} from 'framer-motion'
@@ -22,274 +23,324 @@ function Project() {
      },
    }
   return (
-      <Main id='project' data-scroll-section>
-        <RecentWorks>
-          <motion.span
-            initial={{ opacity: 0, width: 0 }}
-            whileInView={{ opacity: 1, width: '100%' }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: 'linear' }}
-            className='LineTop'
-          ></motion.span>
-          <div
-            data-scroll
-            data-scroll-speed='2'
-            data-scroll-direction='horizontal'
-            className='recent'
+    <Main id="project" data-scroll-section>
+      <RecentWorks>
+        <motion.span
+          initial={{ opacity: 0, width: 0 }}
+          whileInView={{ opacity: 1, width: "100%" }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "linear" }}
+          className="LineTop"
+        ></motion.span>
+        <div
+          data-scroll
+          data-scroll-speed="2"
+          data-scroll-direction="horizontal"
+          className="recent"
+        >
+          <h1>RECENT PROJECTS_</h1>
+          <h1>RECENT PROJECTS_</h1>
+          <h1>RECENT PROJECTS_</h1>
+          <h1>RECENT PROJECTS_</h1>
+          <h1>RECENT PROJECTS_</h1>
+          <h1>RECENT PROJECTS_</h1>
+          <h1>RECENT PROJECTS_</h1>
+        </div>
+        <motion.span
+          initial={{ opacity: 0, width: 0 }}
+          whileInView={{ opacity: 1, width: "100%" }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "linear" }}
+          className="LineButtom"
+        ></motion.span>
+      </RecentWorks>
+      <Works>
+        <Link
+          data-scroll
+          data-scroll-speed="-2.2"
+          data-scroll-direction="vertical"
+        >
+          <motion.div
+            whileHover={{ scale: 0.96 }}
+            transition={{ duration: 0.5 }}
+            className="image"
           >
-            <h1>RECENT PROJECTS_</h1>
-            <h1>RECENT PROJECTS_</h1>
-            <h1>RECENT PROJECTS_</h1>
-            <h1>RECENT PROJECTS_</h1>
-            <h1>RECENT PROJECTS_</h1>
-            <h1>RECENT PROJECTS_</h1>
-            <h1>RECENT PROJECTS_</h1>
+            <img loading="lazy" src={project7} alt="" />
+          </motion.div>
+          <div className="links">
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
+              target="_blank"
+              rel="noreferrer"
+              href="https://github.com/TooniOlaniyan/help_me_rizz_ai"
+            >
+              <BsGithub size={30} />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
+              target="_blank"
+              rel="noreferrer"
+              href="#"
+            >
+              <ImArrowUpRight2 size={30} />
+            </motion.a>
           </div>
-          <motion.span
-            initial={{ opacity: 0, width: 0 }}
-            whileInView={{ opacity: 1, width: '100%' }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: 'linear' }}
-            className='LineButtom'
-          ></motion.span>
-        </RecentWorks>
-        <Works>
-          <Link
-            data-scroll
-            data-scroll-speed='-2.2'
-            data-scroll-direction='vertical'
+        </Link>
+        <Text
+          data-scroll
+          data-scroll-speed="-1"
+          data-scroll-direction="vertical"
+          variants={parent}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
+          <motion.h2>RUMI AI texting assistance </motion.h2>
+          <motion.p>
+            RUMI AI is an AI powered wingman<br /> built with
+            Nextjs, Typescript, OpenAi and tailwindcss
+          </motion.p>
+        </Text>
+      </Works>
+      <Works>
+        <Link
+          data-scroll
+          data-scroll-speed="-2.2"
+          data-scroll-direction="vertical"
+        >
+          <motion.div
+            whileHover={{ scale: 0.96 }}
+            transition={{ duration: 0.5 }}
+            className="image"
           >
-            <motion.div
-              whileHover={{ scale: 0.96 }}
-              transition={{ duration: 0.5 }}
-              className='image'
+            <img loading="lazy" src={project6} alt="" />
+          </motion.div>
+          <div className="links">
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
+              target="_blank"
+              rel="noreferrer"
+              href="https://github.com/TooniOlaniyan/cardtonic-user-dashboard-clone"
             >
-              <img loading='lazy' src={project6} alt='' />
-            </motion.div>
-            <div className='links'>
-              <motion.a
-                whileHover={{ scale: 1.2 }}
-                transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
-                target='_blank'
-                rel='noreferrer'
-                href='https://github.com/TooniOlaniyan/cardtonic-user-dashboard-clone'
-              >
-                <BsGithub size={30} />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.2 }}
-                transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
-                target='_blank'
-                rel='noreferrer'
-                href='https://cardtonic-user-dashboard-clone.vercel.app/'
-              >
-                <ImArrowUpRight2 size={30} />
-              </motion.a>
-            </div>
-          </Link>
-          <Text
-            data-scroll
-            data-scroll-speed='-1'
-            data-scroll-direction='vertical'
-            variants={parent}
-            initial='initial'
-            whileInView='animate'
-            viewport={{ once: true }}
-          >
-            <motion.h2>A UserDashbord</motion.h2>
-            <motion.p>
-              This is a clone of cardtonic.com User dashboard <br /> built with
-              Reactjs
-            </motion.p>
-          </Text>
-        </Works>
-        <Works>
-          <Text
-            data-scroll
-            data-scroll-speed='-1'
-            data-scroll-direction='vertical'
-            variants={parent}
-            initial='initial'
-            whileInView='animate'
-            viewport={{ once: true }}
-          >
-            <motion.h2>An E-bike Landing Page</motion.h2>
-            <motion.p>
-              A landing page using <br /> React and tailwind
-            </motion.p>
-          </Text>
-          <Link
-            data-scroll
-            data-scroll-speed='-2.2'
-            data-scroll-direction='vertical'
-          >
-            <motion.div className='image'>
-              <img className='test' loading='lazy' src={project1} alt='' />
-            </motion.div>
+              <BsGithub size={30} />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
+              target="_blank"
+              rel="noreferrer"
+              href="https://cardtonic-user-dashboard-clone.vercel.app/"
+            >
+              <ImArrowUpRight2 size={30} />
+            </motion.a>
+          </div>
+        </Link>
+        <Text
+          data-scroll
+          data-scroll-speed="-1"
+          data-scroll-direction="vertical"
+          variants={parent}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
+          <motion.h2>A UserDashbord</motion.h2>
+          <motion.p>
+            This is a clone of cardtonic.com User dashboard <br /> built with
+            Reactjs
+          </motion.p>
+        </Text>
+      </Works>
+      <Works>
+        <Text
+          data-scroll
+          data-scroll-speed="-1"
+          data-scroll-direction="vertical"
+          variants={parent}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
+          <motion.h2>An E-bike Landing Page</motion.h2>
+          <motion.p>
+            A landing page using <br /> React and tailwind
+          </motion.p>
+        </Text>
+        <Link
+          data-scroll
+          data-scroll-speed="-2.2"
+          data-scroll-direction="vertical"
+        >
+          <motion.div className="image">
+            <img className="test" loading="lazy" src={project1} alt="" />
+          </motion.div>
 
-            <div className='links'>
-              <motion.a
-                whileHover={{ scale: 1.2 }}
-                transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
-                target='_blank'
-                href='https://github.com/TooniOlaniyan/bike-landingpage'
-              >
-                <BsGithub size={30} />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.2 }}
-                transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
-                target='_blank'
-                href='https://ebike-landingpage.vercel.app/'
-              >
-                <ImArrowUpRight2 size={30} />
-              </motion.a>
-            </div>
-          </Link>
-        </Works>
-        <Works>
-          <Link
-            data-scroll
-            data-scroll-speed='-2.2'
-            data-scroll-direction='vertical'
-          >
-            <motion.div
-              whileHover={{ scale: 0.96 }}
-              transition={{ duration: 0.8 }}
-              className='image'
+          <div className="links">
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
+              target="_blank"
+              href="https://github.com/TooniOlaniyan/bike-landingpage"
             >
-              <img loading='lazy' src={project2} alt='' />
-            </motion.div>
-            <div className='links'>
-              <motion.a
-                whileHover={{ scale: 1.2 }}
-                transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
-                target='_blank'
-                href='https://github.com/TooniOlaniyan/WAGMI'
-              >
-                <BsGithub size={30} />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.2 }}
-                transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
-                target='_blank'
-                href='https://wagmi-xi.vercel.app/'
-              >
-                <ImArrowUpRight2 size={30} />
-              </motion.a>
-            </div>
-          </Link>
-          <Text
-            data-scroll
-            data-scroll-speed='-1'
-            data-scroll-direction='vertical'
-            variants={parent}
-            initial='initial'
-            whileInView='animate'
-            viewport={{ once: true }}
-          >
-            <motion.h2>WAGMI APP</motion.h2>
-            <motion.p>
-              A fullstack app for investing <br /> React and Firebase
-            </motion.p>
-          </Text>
-        </Works>
-        <Works>
-          <Text
-            data-scroll
-            data-scroll-speed='-1'
-            data-scroll-direction='vertical'
-            variants={parent}
-            initial='initial'
-            whileInView='animate'
-            viewport={{ once: true }}
-          >
-            <motion.h2>Cardtonic Landing Page</motion.h2>
-            <motion.p>
-              A clone of Cardtonic page <br /> using Reactjs
-            </motion.p>
-          </Text>
-          <Link
-            data-scroll
-            data-scroll-speed='-3'
-            data-scroll-direction='vertical'
-          >
-            <motion.div
-              whileHover={{ scale: 0.96 }}
-              transition={{ duration: 0.8 }}
-              className='image'
+              <BsGithub size={30} />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
+              target="_blank"
+              href="https://ebike-landingpage.vercel.app/"
             >
-              <img loading='lazy' src={project3} alt='' />
-            </motion.div>
-            <div className='links'>
-              <motion.a
-                whileHover={{ scale: 1.2 }}
-                transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
-                target='_blank'
-                href='https://github.com/TooniOlaniyan/Cardtonic-Clone'
-              >
-                <BsGithub size={30} />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.2 }}
-                transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
-                target='_blank'
-                href='https://cardtonic-clonelanding.vercel.app/'
-              >
-                <ImArrowUpRight2 size={30} />
-              </motion.a>
-            </div>
-          </Link>
-        </Works>
-        <Works>
-          <Link
-            data-scroll
-            data-scroll-speed='-2.2'
-            data-scroll-direction='vertical'
+              <ImArrowUpRight2 size={30} />
+            </motion.a>
+          </div>
+        </Link>
+      </Works>
+      <Works>
+        <Link
+          data-scroll
+          data-scroll-speed="-2.2"
+          data-scroll-direction="vertical"
+        >
+          <motion.div
+            whileHover={{ scale: 0.96 }}
+            transition={{ duration: 0.8 }}
+            className="image"
           >
-            <motion.div
-              whileHover={{ scale: 0.96 }}
-              transition={{ duration: 0.8 }}
-              className='image'
+            <img loading="lazy" src={project2} alt="" />
+          </motion.div>
+          <div className="links">
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
+              target="_blank"
+              href="https://github.com/TooniOlaniyan/WAGMI"
             >
-              <img loading='lazy' src={project4} alt='' />
-            </motion.div>
-            <div className='links'>
-              <motion.a
-                whileHover={{ scale: 1.2 }}
-                transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
-                target='_blank'
-                href='https://github.com/TooniOlaniyan/houseSale-App'
-              >
-                <BsGithub size={30} />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.2 }}
-                transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
-                target='_blank'
-                href='https://house-sale-app-rosy.vercel.app/'
-              >
-                <ImArrowUpRight2 size={30} />
-              </motion.a>
-            </div>
-          </Link>
-          <Text
-            data-scroll
-            data-scroll-speed='-1'
-            data-scroll-direction='vertical'
-            variants={parent}
-            initial='initial'
-            whileInView='animate'
-            viewport={{ once: true }}
+              <BsGithub size={30} />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
+              target="_blank"
+              href="https://wagmi-xi.vercel.app/"
+            >
+              <ImArrowUpRight2 size={30} />
+            </motion.a>
+          </div>
+        </Link>
+        <Text
+          data-scroll
+          data-scroll-speed="-1"
+          data-scroll-direction="vertical"
+          variants={parent}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
+          <motion.h2>WAGMI APP</motion.h2>
+          <motion.p>
+            A fullstack app for investing <br /> React and Firebase
+          </motion.p>
+        </Text>
+      </Works>
+      <Works>
+        <Text
+          data-scroll
+          data-scroll-speed="-1"
+          data-scroll-direction="vertical"
+          variants={parent}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
+          <motion.h2>Cardtonic Landing Page</motion.h2>
+          <motion.p>
+            A clone of Cardtonic page <br /> using Reactjs
+          </motion.p>
+        </Text>
+        <Link
+          data-scroll
+          data-scroll-speed="-3"
+          data-scroll-direction="vertical"
+        >
+          <motion.div
+            whileHover={{ scale: 0.96 }}
+            transition={{ duration: 0.8 }}
+            className="image"
           >
-            <motion.h2>A House sale App</motion.h2>
-            <motion.p>
-              An app to Sell and List houses <br /> built with Reactjs
-            </motion.p>
-          </Text>
-        </Works>
-      </Main>
-  )
+            <img loading="lazy" src={project3} alt="" />
+          </motion.div>
+          <div className="links">
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
+              target="_blank"
+              href="https://github.com/TooniOlaniyan/Cardtonic-Clone"
+            >
+              <BsGithub size={30} />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
+              target="_blank"
+              href="https://cardtonic-clonelanding.vercel.app/"
+            >
+              <ImArrowUpRight2 size={30} />
+            </motion.a>
+          </div>
+        </Link>
+      </Works>
+      <Works>
+        <Link
+          data-scroll
+          data-scroll-speed="-2.2"
+          data-scroll-direction="vertical"
+        >
+          <motion.div
+            whileHover={{ scale: 0.96 }}
+            transition={{ duration: 0.8 }}
+            className="image"
+          >
+            <img loading="lazy" src={project4} alt="" />
+          </motion.div>
+          <div className="links">
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
+              target="_blank"
+              href="https://github.com/TooniOlaniyan/houseSale-App"
+            >
+              <BsGithub size={30} />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
+              target="_blank"
+              href="https://house-sale-app-rosy.vercel.app/"
+            >
+              <ImArrowUpRight2 size={30} />
+            </motion.a>
+          </div>
+        </Link>
+        <Text
+          data-scroll
+          data-scroll-speed="-1"
+          data-scroll-direction="vertical"
+          variants={parent}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
+          <motion.h2>A House sale App</motion.h2>
+          <motion.p>
+            An app to Sell and List houses <br /> built with Reactjs
+          </motion.p>
+        </Text>
+      </Works>
+    </Main>
+  );
 }
 
 const Main = styled(motion.div)`
