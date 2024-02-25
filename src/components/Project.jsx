@@ -82,7 +82,7 @@ function Project() {
               transition={{ duration: 0.3, ease: [0.6, 0.01, -0.05, 0.9] }}
               target="_blank"
               rel="noreferrer"
-              href="#"
+              href="https://help-me-rizz-9wbt4ve79-tooniolaniyan.vercel.app/"
             >
               <ImArrowUpRight2 size={30} />
             </motion.a>
@@ -99,8 +99,8 @@ function Project() {
         >
           <motion.h2>RUMI AI texting assistance </motion.h2>
           <motion.p>
-            RUMI AI is an AI powered wingman<br /> built with
-            Nextjs, Typescript, OpenAi and tailwindcss
+            RUMI AI is an AI powered wingman
+            <br /> built with Nextjs, Typescript, OpenAi and tailwindcss
           </motion.p>
         </Text>
       </Works>
